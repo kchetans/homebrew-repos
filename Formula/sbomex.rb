@@ -5,43 +5,43 @@
 class Sbomex < Formula
   desc "sbomex is a command line utility to help query and pull from Interlynk public SBOM"
   homepage "https://github.com/kchetans/homebrew-repos"
-  version "0.0.12"
+  version "0.0.13"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/kchetans/sbomex/releases/download/v0.0.12/sbomex-darwin-amd64"
-      sha256 "b1171c60b63824d907672d4dee248d569f08736423d7b54ff48010f05a128227"
-
-      def install
-        bin.install "sbomex-darwin-amd64" => "sbomex-darwin-amd64"
-      end
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/kchetans/sbomex/releases/download/v0.0.12/sbomex-darwin-arm64"
-      sha256 "c94ee5930b0466734fef40635268055efe63e8f6a909de10b440333027df97fa"
+      url "https://github.com/kchetans/sbomex/releases/download/v0.0.13/sbomex-darwin-arm64"
+      sha256 "b94679884b0f61044681e73c50ab1eacf1f1892e83a61d2606ae999db8b1f7ae"
 
       def install
         bin.install "sbomex-darwin-arm64" => "sbomex-darwin-arm64"
       end
     end
+    if Hardware::CPU.intel?
+      url "https://github.com/kchetans/sbomex/releases/download/v0.0.13/sbomex-darwin-amd64"
+      sha256 "01f4dd17d06ff52589e706f384a8174140e2b454b80e9c4efc73d11aff024b6d"
+
+      def install
+        bin.install "sbomex-darwin-amd64" => "sbomex-darwin-amd64"
+      end
+    end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kchetans/sbomex/releases/download/v0.0.12/sbomex-linux-arm64"
-      sha256 "4b0f4cff47e7b8a7fb01d905a51c279cbc5c5852ab82e6207f23fc356c6e6b46"
-
-      def install
-        bin.install "sbomex-linux-arm64" => "sbomex-linux-arm64"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/kchetans/sbomex/releases/download/v0.0.12/sbomex-linux-amd64"
-      sha256 "3fb4384ad9c41c20a9bde31631c2a5d349ebf6cb0f4fd7c8304a38d1695d99ed"
+      url "https://github.com/kchetans/sbomex/releases/download/v0.0.13/sbomex-linux-amd64"
+      sha256 "7232f92698c9d70fdeae4b883c8b147a2f98d9141085b47c6351c0df83b533e9"
 
       def install
         bin.install "sbomex-linux-amd64" => "sbomex-linux-amd64"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kchetans/sbomex/releases/download/v0.0.13/sbomex-linux-arm64"
+      sha256 "f79c5a0e2d4c956eb726261f626a62745909735f3702ef423f0632fd5185bce8"
+
+      def install
+        bin.install "sbomex-linux-arm64" => "sbomex-linux-arm64"
       end
     end
   end
