@@ -5,21 +5,21 @@
 class Sbomex < Formula
   desc "sbomex is a command line utility to help query and pull from Interlynk public SBOM"
   homepage "https://github.com/kchetans/homebrew-repos"
-  version "0.0.14"
+  version "0.0.15"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kchetans/sbomex/releases/download/v0.0.14/sbomex-darwin-arm64"
-      sha256 "3118fd3a679e1caa636572f098ea4712f1bff17b60b61ee901411d54a88fc225"
+      url "https://github.com/kchetans/sbomex/releases/download/v0.0.15/sbomex-darwin-arm64"
+      sha256 "898f7fc77a16a8db50a932b00e12a7de704cdb7a36341a0990ae24e3445b041d"
 
       def install
         bin.install "sbomex-darwin-arm64" => "sbomex-darwin-arm64"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kchetans/sbomex/releases/download/v0.0.14/sbomex-darwin-amd64"
-      sha256 "f2af38219cb0d9e6be73a51207562d6f4ab611195b637350f5434b434b0fbd72"
+      url "https://github.com/kchetans/sbomex/releases/download/v0.0.15/sbomex-darwin-amd64"
+      sha256 "eb6ea6165caae7423d437b8ddfcbee0d576b65ba9fc6261477a7fe481a5daf6b"
 
       def install
         bin.install "sbomex-darwin-amd64" => "sbomex-darwin-amd64"
@@ -29,16 +29,16 @@ class Sbomex < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kchetans/sbomex/releases/download/v0.0.14/sbomex-linux-arm64"
-      sha256 "65d1184dd24d3ef7f8cd35a626c0588938d7a662ecb0ea67508aea92cb02cc0d"
+      url "https://github.com/kchetans/sbomex/releases/download/v0.0.15/sbomex-linux-arm64"
+      sha256 "7f6fe43ffdc06e3ba0512a3395845a7049f367222c90f38859313fedb530a5d5"
 
       def install
         bin.install "sbomex-linux-arm64" => "sbomex-linux-arm64"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kchetans/sbomex/releases/download/v0.0.14/sbomex-linux-amd64"
-      sha256 "419703415a633ae0ecff56ad4829bfedd29190ac8d28973960c294df7f8c2fef"
+      url "https://github.com/kchetans/sbomex/releases/download/v0.0.15/sbomex-linux-amd64"
+      sha256 "f682e39181e8ccf18cb9bc8b4e7bb56fa275683f7fc5dd0d84117b4a93776b0e"
 
       def install
         bin.install "sbomex-linux-amd64" => "sbomex-linux-amd64"
